@@ -1,1 +1,1 @@
-from .libexample_adder import add, sub  # noqa: F401
+from .libexample_adder import add, adds, sub, subs  # noqa: F401

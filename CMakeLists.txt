@@ -26,6 +26,7 @@ COMPUTE_PROJECT_ARGS(PROJECT_ARGS LANGUAGES CXX)
 project(${PROJECT_NAME} ${PROJECT_ARGS})
 
 # Project dependencies
+ADD_PROJECT_DEPENDENCY(pinocchio REQUIRED)
 set(BOOST_COMPONENTS unit_test_framework)
 
 if(BUILD_PYTHON_INTERFACE)
@@ -40,14 +41,17 @@ SEARCH_FOR_BOOST()
 # Main Library
 set(${PROJECT_NAME}_HEADERS
   include/${PROJECT_NAME}/gepadd.hpp
+  include/${PROJECT_NAME}/pin.hpp
   )
 
 set(${PROJECT_NAME}_SOURCES
   src/gepadd.cpp
+  src/pin.cpp
   )
 
 add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_SOURCES} ${${PROJECT_NAME}_HEADERS})
 target_include_directories(${PROJECT_NAME} PUBLIC $<INSTALL_INTERFACE:include>)
+target_link_libraries(${PROJECT_NAME} PUBLIC pinocchio::pinocchio)
 
 if(SUFFIX_SO_VERSION)
   set_target_properties(${PROJECT_NAME} PROPERTIES SOVERSION ${PROJECT_VERSION})
