@@ -5,3 +5,5 @@ dist/
 python/example_adder.egg-info/
 venv/
 wheelhouse/
+build/
+*.egg-info/
