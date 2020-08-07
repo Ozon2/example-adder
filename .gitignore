@@ -1,0 +1,7 @@
+.idea/
+Testing/
+_skbuild/
+dist/
+python/example_adder.egg-info/
+venv/
+wheelhouse/
