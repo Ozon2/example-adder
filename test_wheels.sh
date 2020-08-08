@@ -1,4 +1,6 @@
-pip3 install wheelhouse/gepetto_example_adder-3.0.2-cp36-cp36m-manylinux2014_x86_64.whl
+#!/bin/bash -ex
+
+pip3 install /io/wheelhouse/gepetto_example_adder-3.0.2-cp36-cp36m-manylinux2014_x86_64.whl
 
 # TODO: fix rpath
 # Fix: export LD_LIBRARY_PATH=/usr/local/lib/python3.6/site-packages/gepetto_example_adder.libs:$LD_LIBRARY_PATH
