@@ -7,3 +7,4 @@ venv/
 wheelhouse/
 build/
 *.egg-info/
+gepetto_example_adder-*/

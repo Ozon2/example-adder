@@ -8,8 +8,12 @@ set(PROJECT_URL https://gitlab.laas.fr/${PROJECT_NAMESPACE}/${PROJECT_NAME})
 
 # Project options
 option(BUILD_PYTHON_INTERFACE "Build the python binding" ON)
-option(INSTALL_PYTHON_INTERFACE_ONLY "Install *ONLY* the python bindings" OFF)
 option(SUFFIX_SO_VERSION "Suffix library name with its version" ON)
+if(SKBUILD)
+  option(INSTALL_PYTHON_INTERFACE_ONLY "Install *ONLY* the python bindings" ON)
+else()
+  option(INSTALL_PYTHON_INTERFACE_ONLY "Install *ONLY* the python bindings" OFF)
+endif()
 
 # Project configuration
 if(NOT INSTALL_PYTHON_INTERFACE_ONLY)

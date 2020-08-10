@@ -1,10 +1,10 @@
 FROM quay.io/pypa/manylinux2014_x86_64:latest
 
-RUN yum -y update \
-&& yum -y install boost-python36-devel.x86_64 \
-                  python3-devel
+ENV PLAT manylinux2014_x86_64
 
-RUN pip3 install --upgrade pip
-RUN pip3 install scikit-build wheel setuptools cmake
+RUN yum -y update \
+&& yum -y install boost-python36-devel
 
 WORKDIR /io
+
+CMD ["/bin/bash"]
