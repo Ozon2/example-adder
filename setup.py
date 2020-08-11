@@ -6,6 +6,8 @@ setup(
     description="An example project, to show how to use Gepetto's tools",
     url='https://github.com/Gepetto/example-adder',
     classifiers=[
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
     ],
+    python_requires='>=2.7',
 )
